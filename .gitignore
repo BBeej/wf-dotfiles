@@ -1,0 +1,8 @@
+# Ignore all .config
+/*
+
+# 'Whitelist' main dotfiles
+!/.gitignore
+!/wf-shell.ini
+!/wayfire.ini
+!/wayfire

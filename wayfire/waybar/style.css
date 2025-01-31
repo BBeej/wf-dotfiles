@@ -1,0 +1,137 @@
+@import "../theme/flavor/mocha.css";
+
+* {
+    /* font-family: FantasqueSansMono Nerd Font; */
+    /* font-size: 17px; */
+    font-family: "Fira Code Nerd Font";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    min-height: 0px;
+}
+
+#waybar {
+    background: transparent;
+    color: @text;
+    margin: 8px 8px;
+}
+
+/* Fix wlr/workspaces module in Wayfire */
+/*
+#workspaces {
+    border-radius: 1rem;
+    margin: 5px;
+    background-color: @surface0;
+    margin-left: 1rem;
+}
+
+#workspaces button {
+    color: @lavender;
+    border-radius: 1rem;
+    padding: 0.4rem;
+}
+
+#workspaces button.active {
+    color: @sky;
+    border-radius: 1rem;
+}
+
+#workspaces button:hover {
+    color: @sapphire;
+    border-radius: 1rem;
+}
+*/
+
+
+#custom-menu,
+#custom-music,
+#tray,
+#backlight,
+#clock,
+#battery,
+#pulseaudio,
+#custom-lock,
+#custom-power {
+    /* background-color:rgba(30, 30, 46, 0.7); */
+    background-color:rgba(12, 12, 49, 0.5);
+    padding: 0.25rem 1rem;
+    margin: 8px 0;
+    margin-bottom: 4px;
+}
+
+#custom-menu:hover,
+#custom-music:hover,
+#backlight:hover,
+#clock:hover,
+#battery:hover,
+#pulseaudio:hover,
+#custom-lock:hover,
+#custom-power:hover {
+    background-color:rgba(32, 32, 59, 0.5);
+}
+
+#custom-menu {
+    color: @sapphire;
+    font-size: 20px;
+    margin-left: .75rem;
+    padding-right: 1.25rem;
+    border-radius: 1rem;
+    margin-right: 1rem;
+}
+
+#custom-music {
+    color: @mauve;
+    border-radius: 1rem;
+}
+
+#pulseaudio {
+    color: @maroon;
+    border-radius: 1rem 0px 0px 1rem;
+    margin-left: 1rem;
+}
+
+#clock {
+    color: @blue;
+    border-radius: 0px 1rem 1rem 0px;
+    margin-right: 1rem;
+}
+
+#battery {
+    color: @green;
+}
+
+#battery.charging {
+    color: @green;
+}
+
+#battery.warning:not(.charging) {
+    color: @red;
+}
+
+#backlight {
+    color: @yellow;
+    font-size: 20px;
+}
+
+#backlight, #battery {
+    border-radius: 0px;
+}
+
+#custom-lock {
+    font-size: 18px;
+    border-radius: 1rem 0px 0px 1rem;
+    color: @lavender;
+}
+
+
+#tray {
+    margin-right: 1rem;
+    border-radius: 1rem;
+}
+
+#custom-power {
+    font-size: 17px;
+    margin-right: .75rem;
+    border-radius: 0px 1rem 1rem 0px;
+    color: @red;
+}

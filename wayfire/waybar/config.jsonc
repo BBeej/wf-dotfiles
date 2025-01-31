@@ -1,0 +1,96 @@
+{
+    "layer": "top", // Waybar at top layer
+    "position": "top", // Waybar position (top|bottom|left|right)
+    // "width": 1366, // Waybar width
+    // Choose the order of the modules
+    "modules-left": [
+        "custom/menu",
+        "custom/music"
+    ],
+    // "modules-center": [
+    //     "custom/music"
+    // ],
+    "modules-right": [ 
+        "pulseaudio", 
+        "backlight",
+        "battery",
+        "clock",
+        "tray", 
+        "custom/lock", 
+        "custom/power"
+    ],
+
+    // CUSTOM
+    "custom/menu": {
+        "format" : "󰣇",
+        "tooltip": false,
+        "on-click": "~/.config/wayfire/scripts/rofi_launcher"
+    },
+    
+    // DOTFILES MODULES
+    "tray": {
+        "icon-size": 21,
+        "spacing": 10
+    },
+    
+    "custom/music": {
+        "format": "   {}",
+        "escape": true,
+        "interval": 5,
+        "tooltip": false,
+        // "exec": "playerctl metadata --format='{{ title }}' || echo 'No players found'",
+        "exec": "playerctl metadata --format='{{ title }}   {{ artist }}' || echo 'No players found'",
+        "on-click": "playerctl play-pause",
+        "max-length": 50
+    },
+    
+    "clock": {
+        "timezone": "America/Argentina/Buenos_Aires",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format-alt": " {:%d/%m/%Y}",
+        "format": " {:%H:%M}"
+    },
+    
+    "backlight": {
+        "device": "intel_backlight",
+        "format": "{icon}",
+        "format-icons": ["", "", "", "", "", "", "", "", ""]
+    },
+    
+    "battery": {
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon} {capacity}%",
+        "format-charging": " {capacity}%",
+        "format-plugged": " {capacity}%",
+        "format-alt": "{icon} {capacity}%",
+        "format-icons": ["", "",  "", "", "", "", "", "", "", "", "", ""]
+    },
+    
+    "pulseaudio": {
+        // "scroll-step": 0.30, // %, can be a float
+        "scroll-step": 1,
+        "format": "{icon} {volume}%",
+        "format-muted": "     ",
+        "format-icons": {
+            "default": ["   ", "  ", "  "]
+        },
+        "on-click": "pulsemixer --toggle-mute",
+        "max-volume": 150,
+        "smooth-scrolling-threshold": 1
+    },
+    
+    "custom/lock": {
+        "tooltip": false,
+        "on-click": "systemctl suspend",
+        "format": "󰒲",
+    },
+    
+    "custom/power": {
+        "tooltip": false,
+        "on-click": "wayland-logout  &",
+        "format": " "
+    }
+}
